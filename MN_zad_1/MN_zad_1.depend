@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1615299200 source:c:\users\mateusz\desktop\zad\mn_zad_1\main.cpp
+	<iostream>
+	<math.h>
+
+1616255410 source:c:\users\mateusz\desktop\studia_s4\mnio\zad 1\mn_zad_1\main.cpp
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<windows.h>
+	"gnuplot.h"
+
+1615543894 c:\users\mateusz\desktop\studia_s4\mnio\zad 1\mn_zad_1\gnuplot_i.hpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	<stdexcept>
+	<cstdio>
+	<cstdlib>
+	<list>
+	<io.h>
+	<unistd.h>
+
+1616255533 c:\users\mateusz\desktop\studia_s4\mnio\zad 1\mn_zad_1\gnuplot.h
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
+1616279523 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<windows.h>
+	"Define.h"
+	"Funkcje.h"
+	"MetodaSiecznych.h"
+	"MetodaStycznych.h"
+
+1616279676 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodasiecznych.cpp
+	"MetodaSiecznych.h"
+
+1616279676 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodasiecznych.h
+	"Define.h"
+
+1616278669 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\define.h
+	"math.h"
+
+1616279676 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodastycznych.cpp
+	"MetodaStycznych.h"
+
+1616279676 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodastycznych.h
+	"Define.h"
+
+1616278646 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
+
