@@ -15,7 +15,7 @@ double MetodaStycznych::szukanieMtStycznych_IT(fun f, fun pf, Przedzial p, int i
         liczba_iteracji++;
         x = a - (f(a)/pf(a));
         if(x < p.begin)
-            a++;
+            a += 0.25*(a+b);
         else
             a = x;
     }
@@ -35,7 +35,7 @@ double MetodaStycznych::szukanieMtStycznych_E(fun f, fun pf, Przedzial p, double
         liczba_iteracji++;
         x = a - (f(a)/pf(a));
         if(x < p.begin)
-            a++;
+            a += 0.25*(a+b);
         else
             a = x;
     }

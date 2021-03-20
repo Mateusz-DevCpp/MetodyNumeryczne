@@ -1,6 +1,9 @@
 
-#define f_wielomianowa -(((x + 1.0) * x - 2.0) * x - 1.0)
-#define p_f_wielomianowa -((3 * x + 2) * x - 2)
+#define f_wielomianowa ((x + 1.0) * x - 2.0) * x - 1.0
+#define p_f_wielomianowa (3 * x + 2) * x - 2
+
+//#define f_wielomianowa ( 4 * x - 2.5 ) * ( 4 * x - 2.5 ) - 5
+//#define p_f_wielomianowa 8 * ( 4 * x - 2.5 )
 
 #define f_trygonometryczna sin(x) - cos(x + 1.0)
 #define p_f_trygonometryczna cos(x) + sin(x + 1.0)
