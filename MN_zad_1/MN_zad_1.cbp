@@ -35,12 +35,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="gnuplot.h" />
 		<Unit filename="include/Define.h" />
 		<Unit filename="include/Funkcje.h" />
+		<Unit filename="include/GnuPlot.h" />
 		<Unit filename="include/MetodaSiecznych.h" />
 		<Unit filename="include/MetodaStycznych.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/GnuPlot.cpp" />
 		<Unit filename="src/MetodaSiecznych.cpp" />
 		<Unit filename="src/MetodaStycznych.cpp" />
 		<Extensions />

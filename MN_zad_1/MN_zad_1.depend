@@ -28,11 +28,12 @@
 	<stdio.h>
 	<stdlib.h>
 
-1616280064 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
+1616338965 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
 	<iostream>
 	<math.h>
 	<stdio.h>
 	<windows.h>
+	"include/GnuPlot.h"
 	"Define.h"
 	"Funkcje.h"
 	"MetodaSiecznych.h"
@@ -54,4 +55,18 @@
 	"Define.h"
 
 1616281778 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
+
+1616338777 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\gnuplot.cpp
+	"GnuPlot.h"
+
+1616338446 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\gnuplot.h
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+
+1616337507 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\gnuplot.h
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
 
