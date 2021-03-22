@@ -9,6 +9,7 @@ class MetodaSiecznych
 {
 private:
     static unsigned int liczba_iteracji;
+    static double error;
 
 public:
     static double szukanieMtSiecznych_IT(fun f, Przedzial p, int ilosc_iteracji);
@@ -18,6 +19,7 @@ public:
     static double szukanieMtSiecznych_E_W(std::vector<double> wsp_f, Przedzial p, double blad);
 
     static int PodajIloscIteracji();
+    static double PodajWartoscBledu();
 };
 
 #endif // METODASIECZNYCH_H

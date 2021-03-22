@@ -3,6 +3,7 @@
 #include "Horner.h"
 
 unsigned int MetodaSiecznych::liczba_iteracji = 0;
+double MetodaSiecznych::error = 100;
 
 double MetodaSiecznych::szukanieMtSiecznych_IT(fun f, Przedzial p, int ilosc_iteracji)
 {
@@ -15,13 +16,15 @@ double MetodaSiecznych::szukanieMtSiecznych_IT(fun f, Przedzial p, int ilosc_ite
     for(int i=0; i<ilosc_iteracji; i++)
     {
         liczba_iteracji++;
-        x = a - (f(a)/(f(b)-f(a))) * (b-a);
 
+        x = a - (f(a)/(f(b)-f(a))) * (b-a);
         if(f(x)*f(a) < 0)
             b = x;
         else
             a = x;
     }
+
+    error = fabs(f(x));
     return x;
 }
 
@@ -36,14 +39,15 @@ double MetodaSiecznych::szukanieMtSiecznych_E(fun f, Przedzial p, double blad)
     while(fabs(f(x)) >= blad)
     {
         liczba_iteracji++;
-        x = a - (f(a)/(f(b)-f(a))) * (b-a);
 
+        x = a - (f(a)/(f(b)-f(a))) * (b-a);
         if(f(x)*f(a) < 0)
             b = x;
         else
             a = x;
     }
 
+    error = fabs(f(x));
     return x;
 }
 
@@ -64,13 +68,15 @@ double MetodaSiecznych::szukanieMtSiecznych_IT_W(std::vector<double> wsp_f, Prze
     for(int i=0; i<ilosc_iteracji; i++)
     {
         liczba_iteracji++;
-        x = a - (Horner::wartoscWielomianuHorner(a,wsp_f)/(Horner::wartoscWielomianuHorner(b,wsp_f)-Horner::wartoscWielomianuHorner(a,wsp_f))) * (b-a);
 
+        x = a - (Horner::wartoscWielomianuHorner(a,wsp_f)/(Horner::wartoscWielomianuHorner(b,wsp_f)-Horner::wartoscWielomianuHorner(a,wsp_f))) * (b-a);
         if(Horner::wartoscWielomianuHorner(x,wsp_f)*Horner::wartoscWielomianuHorner(a,wsp_f) < 0)
             b = x;
         else
             a = x;
     }
+
+    error = fabs(Horner::wartoscWielomianuHorner(x,wsp_f));
     return x;
 }
 
@@ -85,13 +91,19 @@ double MetodaSiecznych::szukanieMtSiecznych_E_W(std::vector<double> wsp_f, Przed
     while(fabs(Horner::wartoscWielomianuHorner(x,wsp_f)) >= blad)
     {
         liczba_iteracji++;
-        x = a - (Horner::wartoscWielomianuHorner(a,wsp_f)/(Horner::wartoscWielomianuHorner(b,wsp_f)-Horner::wartoscWielomianuHorner(a,wsp_f))) * (b-a);
 
+        x = a - (Horner::wartoscWielomianuHorner(a,wsp_f)/(Horner::wartoscWielomianuHorner(b,wsp_f)-Horner::wartoscWielomianuHorner(a,wsp_f))) * (b-a);
         if(Horner::wartoscWielomianuHorner(x,wsp_f)*Horner::wartoscWielomianuHorner(a,wsp_f) < 0)
             b = x;
         else
             a = x;
     }
 
+    error = fabs(Horner::wartoscWielomianuHorner(x,wsp_f));
     return x;
+}
+
+double MetodaSiecznych::PodajWartoscBledu()
+{
+    return error;
 }

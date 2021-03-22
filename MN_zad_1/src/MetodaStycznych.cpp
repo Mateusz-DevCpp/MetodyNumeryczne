@@ -3,6 +3,7 @@
 #include "Horner.h"
 
 unsigned int MetodaStycznych::liczba_iteracji = 0;
+double MetodaStycznych::error = 100;
 
 double MetodaStycznych::szukanieMtStycznych_IT(fun f, fun pf, Przedzial p, int ilosc_iteracji)
 {
@@ -15,10 +16,13 @@ double MetodaStycznych::szukanieMtStycznych_IT(fun f, fun pf, Przedzial p, int i
     for(int i=0; i<ilosc_iteracji; i++)
     {
         liczba_iteracji++;
+
         x = a - (f(a)/pf(a));
         a = x;
     }
-    return a;
+
+    error = fabs(f(x));
+    return x;
 }
 
 double MetodaStycznych::szukanieMtStycznych_E(fun f, fun pf, Przedzial p, double blad)
@@ -35,7 +39,8 @@ double MetodaStycznych::szukanieMtStycznych_E(fun f, fun pf, Przedzial p, double
         x = a - (f(a)/pf(a));
         a = x;
     }
-    return a;
+    error = fabs(f(x));
+    return x;
 }
 
 int MetodaStycznych::PodajIloscIteracji()
@@ -54,10 +59,13 @@ double MetodaStycznych::szukanieMtStycznych_IT_W(std::vector<double> wsp_f, std:
     for(int i=0; i<ilosc_iteracji; i++)
     {
         liczba_iteracji++;
+
         x = a - (Horner::wartoscWielomianuHorner(a, wsp_f)/Horner::wartoscWielomianuHorner(a, wsp_p));
         a = x;
     }
-    return a;
+
+    error = fabs(Horner::wartoscWielomianuHorner(x, wsp_f));
+    return x;
 }
 
 double MetodaStycznych::szukanieMtStycznych_E_W(std::vector<double> wsp_f, std::vector<double> wsp_p, Przedzial p, double blad)
@@ -71,8 +79,16 @@ double MetodaStycznych::szukanieMtStycznych_E_W(std::vector<double> wsp_f, std::
     while(fabs(Horner::wartoscWielomianuHorner(a, wsp_f)) >= blad)
     {
         liczba_iteracji++;
+
         x = a - (Horner::wartoscWielomianuHorner(a, wsp_f)/Horner::wartoscWielomianuHorner(a, wsp_p));
         a = x;
     }
-    return a;
+
+    error = fabs(Horner::wartoscWielomianuHorner(x, wsp_f));
+    return x;
+}
+
+double MetodaStycznych::PodajWartoscBledu()
+{
+    return error;
 }

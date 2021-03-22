@@ -28,7 +28,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1616435449 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
+1616436443 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
 	<iostream>
 	<math.h>
 	<stdio.h>
@@ -40,22 +40,22 @@
 	"MetodaStycznych.h"
 	"Horner.h"
 
-1616430793 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodasiecznych.cpp
+1616436744 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodasiecznych.cpp
 	"MetodaSiecznych.h"
 	"Horner.h"
 
-1616430264 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodasiecznych.h
+1616436744 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodasiecznych.h
 	"Define.h"
 	<vector>
 
 1616428977 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\define.h
 	"math.h"
 
-1616430332 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodastycznych.cpp
+1616436744 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodastycznych.cpp
 	"MetodaStycznych.h"
 	"Horner.h"
 
-1616430311 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodastycznych.h
+1616436744 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodastycznych.h
 	"Define.h"
 	<vector>
 

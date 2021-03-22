@@ -60,15 +60,19 @@ int main()
         {
             if(mozeWystepowacPierwiastek_Horner(wsp_f, przedzial))
             {
-                std::cout << "Metoda siecznych: ";
+                std::cout << "Metoda siecznych: \n";
                 m_zerowe_mt_siecznych = MetodaSiecznych::szukanieMtSiecznych_E_W(wsp_f, przedzial, stop);
-                std::cout << m_zerowe_mt_siecznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_siecznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaSiecznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
 
-                std::cout << "Metoda stycznych: ";
+                std::cout << "Metoda stycznych: \n";
                 m_zerowe_mt_stycznych = MetodaStycznych::szukanieMtStycznych_E_W(wsp_f, wsp_p, przedzial, stop);
-                std::cout << m_zerowe_mt_stycznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_stycznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaStycznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
             }
             else
             {
@@ -80,15 +84,19 @@ int main()
         {
             if(mozeWystepowacPierwiastek(fun_list[f_id], przedzial))
             {
-                std::cout << "Metoda siecznych: ";
+                std::cout << "Metoda siecznych: \n";
                 m_zerowe_mt_siecznych = MetodaSiecznych::szukanieMtSiecznych_E(fun_list[f_id], przedzial, stop);
-                std::cout << m_zerowe_mt_siecznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_siecznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaSiecznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
 
-                std::cout << "Metoda stycznych: ";
+                std::cout << "Metoda stycznych: \n";
                 m_zerowe_mt_stycznych = MetodaStycznych::szukanieMtStycznych_E(fun_list[f_id], fun_list[f_id+4], przedzial, stop);
-                std::cout << m_zerowe_mt_stycznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_stycznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaStycznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
             }
             else
             {
@@ -105,15 +113,19 @@ int main()
         {
             if(mozeWystepowacPierwiastek_Horner(wsp_f, przedzial))
             {
-                std::cout << "Metoda siecznych: ";
+                std::cout << "Metoda siecznych: \n";
                 m_zerowe_mt_siecznych = MetodaSiecznych::szukanieMtSiecznych_IT_W(wsp_f, przedzial, stop);
-                std::cout << m_zerowe_mt_siecznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_siecznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaSiecznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
 
-                std::cout << "Metoda stycznych: ";
+                std::cout << "Metoda stycznych: \n";
                 m_zerowe_mt_stycznych = MetodaStycznych::szukanieMtStycznych_IT_W(wsp_f, wsp_p, przedzial, stop);
-                std::cout << m_zerowe_mt_stycznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_stycznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaStycznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
             }
             else
             {
@@ -125,15 +137,19 @@ int main()
         {
             if(mozeWystepowacPierwiastek(fun_list[f_id], przedzial))
             {
-                std::cout << "Metoda siecznych: ";
+                std::cout << "Metoda siecznych: \n";
                 m_zerowe_mt_siecznych = MetodaSiecznych::szukanieMtSiecznych_IT(fun_list[f_id], przedzial, stop);
-                std::cout << m_zerowe_mt_siecznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_siecznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaSiecznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaSiecznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
 
-                std::cout << "Metoda stycznych: ";
+                std::cout << "Metoda stycznych: \n";
                 m_zerowe_mt_stycznych = MetodaStycznych::szukanieMtStycznych_IT(fun_list[f_id], fun_list[f_id+4], przedzial, stop);
-                std::cout << m_zerowe_mt_stycznych << std::endl;
-                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl << std::endl;
+                std::cout << "M. zerowe: x =  " << m_zerowe_mt_stycznych << std::endl;
+                std::cout << "ilosc iteracji: " << MetodaStycznych::PodajIloscIteracji() << std::endl;
+                std::cout << "wartosc bledu:  " << MetodaStycznych::PodajWartoscBledu() << std::endl;
+                std::cout << std::endl;
             }
             else
             {

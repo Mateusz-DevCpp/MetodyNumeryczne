@@ -9,6 +9,7 @@ class MetodaStycznych
 {
 private:
     static unsigned int liczba_iteracji;
+    static double error;
 
 public:
     static double szukanieMtStycznych_IT(fun f, fun pf, Przedzial p, int ilosc_iteracji);
@@ -18,6 +19,7 @@ public:
     static double szukanieMtStycznych_E_W(std::vector<double> wsp_f, std::vector<double> wsp_p, Przedzial p, double blad);
 
     static int PodajIloscIteracji();
+    static double PodajWartoscBledu();
 };
 
 #endif // METODASTYCZNYCH_H
