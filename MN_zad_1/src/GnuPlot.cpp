@@ -79,3 +79,38 @@ void GnuPlot::SetSize(double range_x_begin, double range_x_end, double range_y_b
     snprintf(buffer, sizeof(buffer), "set yrange [%f : %f]\n", range_y_begin, range_y_end);
     config_cmd += buffer;
 }
+
+void GnuPlot::EnableGrid(bool x_grid, bool y_grid)
+{
+    if(x_grid)
+        config_cmd += "set grid xtics mytics\n";
+    if(y_grid)
+        config_cmd += "set grid ytics mytics\n";
+}
+
+void GnuPlot::DisableGrid()
+{
+    config_cmd += "unset grid\n";
+}
+
+void GnuPlot::EnableAxis(bool x_axis, bool y_axis)
+{
+    if(x_axis)
+        config_cmd += "set xzeroaxis\n";
+    if(y_axis)
+        config_cmd += "set yzeroaxis\n";
+}
+
+void GnuPlot::DisableAxis()
+{
+    config_cmd += "unset xzeroaxis\n";
+    config_cmd += "unset yzeroaxis\n";
+}
+
+void GnuPlot::SetLegend(std::string option)
+{
+    if(option == "disable")
+        config_cmd += "unset key\n";
+    else
+        config_cmd += "set key " + option + "\n";
+}

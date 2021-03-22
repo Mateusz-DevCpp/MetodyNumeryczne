@@ -28,7 +28,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1616338965 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
+1616430550 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
 	<iostream>
 	<math.h>
 	<stdio.h>
@@ -38,28 +38,33 @@
 	"Funkcje.h"
 	"MetodaSiecznych.h"
 	"MetodaStycznych.h"
+	"Horner.h"
 
-1616279676 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodasiecznych.cpp
+1616430793 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodasiecznych.cpp
 	"MetodaSiecznych.h"
+	"Horner.h"
 
-1616279676 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodasiecznych.h
+1616430264 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodasiecznych.h
 	"Define.h"
+	<vector>
 
-1616278669 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\define.h
+1616428977 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\define.h
 	"math.h"
 
-1616281426 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodastycznych.cpp
+1616430332 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\metodastycznych.cpp
 	"MetodaStycznych.h"
+	"Horner.h"
 
-1616279676 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodastycznych.h
+1616430311 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\metodastycznych.h
 	"Define.h"
+	<vector>
 
-1616281778 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
+1616428567 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
 
-1616338777 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\gnuplot.cpp
+1616426124 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\gnuplot.cpp
 	"GnuPlot.h"
 
-1616338446 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\gnuplot.h
+1616426049 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\gnuplot.h
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
@@ -69,4 +74,12 @@
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
+
+1616428854 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\mfun.h
+
+1616430017 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\horner.cpp
+	"Horner.h"
+
+1616430051 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\horner.h
+	<vector>
 

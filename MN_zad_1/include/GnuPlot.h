@@ -22,6 +22,11 @@ public:
     static void AddLine(double x1, double y1, double x2, double y2, std::string group="1");
 
     static void SetSize(double range_x_begin, double range_x_end, double range_y_begin, double range_y_end);
+    static void EnableGrid(bool x_grid=true, bool y_grid=true);
+    static void DisableGrid();
+    static void EnableAxis(bool x_axis=true, bool y_axis=true);
+    static void DisableAxis();
+    static void SetLegend(std::string option);
 
     static void AddCommand_main_cmd(std::string cmd);
     static void AddCommand_point_cmd(std::string cmd);
