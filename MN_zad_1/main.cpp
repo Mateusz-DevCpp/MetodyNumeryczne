@@ -19,14 +19,14 @@ fun fun_list[8] {wielomian,trygon,wykladnicza,mieszana,wielomian_p,trygon_p,wykl
 int main()
 {
     std::vector<double> wsp_f;
-    wsp_f.push_back(1);
-    wsp_f.push_back(2);
-    wsp_f.push_back(-5);
-    wsp_f.push_back(-6);
+    wsp_f.push_back(-12);
+    wsp_f.push_back(42);
+    wsp_f.push_back(-49);
+    wsp_f.push_back(17);
     std::vector<double> wsp_p;
-    wsp_p.push_back(3);
-    wsp_p.push_back(4);
-    wsp_p.push_back(-5);
+    wsp_p.push_back(-36);
+    wsp_p.push_back(84);
+    wsp_p.push_back(-49);
 
     int f_id = 0;
     Przedzial przedzial;
@@ -168,22 +168,18 @@ int main()
     if(f_id == 0)
     {
         GnuPlot::AddCommand_main_cmd(f_o_wielomianowa);
-        GnuPlot::SetTitle(f_o_wielomianowa);
     }
     else if(f_id == 1)
     {
         GnuPlot::AddCommand_main_cmd(f_o_trygonometryczna);
-        GnuPlot::SetTitle(f_o_trygonometryczna);
     }
     else if(f_id == 2)
     {
         GnuPlot::AddCommand_main_cmd(f_o_wykladnicza);
-        GnuPlot::SetTitle(f_o_wykladnicza);
     }
     else if(f_id == 3)
     {
         GnuPlot::AddCommand_main_cmd(f_o_mieszana);
-        GnuPlot::SetTitle(f_o_mieszana);
     }
     GnuPlot::Draw();
 

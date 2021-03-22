@@ -1,19 +1,19 @@
 
-#define f_o_wielomianowa "x**3 + 2*x**2 - 5*x - 6"
-#define f_wielomianowa x*x*x + 2*x*x - 5*x - 6
-#define p_f_wielomianowa 3*x*x + 4*x - 5
+#define f_o_wielomianowa "-12*x**3 + 42*x**2 - 49*x + 17"
+#define f_wielomianowa -12*x*x*x + 42*x*x - 49*x + 17
+#define p_f_wielomianowa -36*x*x + 84*x - 49
 
-#define f_o_trygonometryczna "sin(x) - cos(x + 1.0)"
-#define f_trygonometryczna sin(x) - cos(x + 1.0)
-#define p_f_trygonometryczna cos(x) + sin(x + 1.0)
+#define f_o_trygonometryczna "sin(x) + 3*cos(0.7*x)"
+#define f_trygonometryczna sin(x) + 3*cos(0.7*x)
+#define p_f_trygonometryczna cos(x) - 2.1*sin(0.7*x)
 
-#define f_o_wykladnicza "exp(x) - 4.0 * x"
-#define f_wykladnicza exp(x) - 4.0 * x
-#define p_f_wykladnicza exp(x) - 4.0
+#define f_o_wykladnicza "exp(x-1)-0.25"
+#define f_wykladnicza exp(x-1)-0.25
+#define p_f_wykladnicza exp(x-1)
 
-#define f_o_mieszana "sin(exp(-x*x)) - 0.5"
-#define f_mieszana sin(exp(-x*x)) - 0.5
-#define p_f_mieszana -2 * exp(-x*x) * x * cos(exp(-x*x))
+#define f_o_mieszana "exp(sin(5*x))-4*x+sin(10*x)-3"
+#define f_mieszana exp(sin(5*x))-4*x+sin(10*x)-3
+#define p_f_mieszana 5*exp(sin(5*x))*cos(5*x)+10*cos(10*x)-4
 
 
 double wielomian(double x)
