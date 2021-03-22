@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <vector>
 
+#include "Define.h"
+
 #define GNUPLOT_NAME "gnuplot"
 
 class GnuPlot
@@ -22,6 +24,8 @@ public:
     static void AddLine(double x1, double y1, double x2, double y2, std::string group="1");
 
     static void SetSize(double range_x_begin, double range_x_end, double range_y_begin, double range_y_end);
+    static void SetSize(Przedzial przedzial);
+    static void SetTitle(std::string title);
     static void EnableGrid(bool x_grid=true, bool y_grid=true);
     static void DisableGrid();
     static void EnableAxis(bool x_axis=true, bool y_axis=true);

@@ -22,6 +22,8 @@ void GnuPlot::Draw()
             fprintf(pipe, points[i].c_str());
         }
 
+        fprintf(pipe, "pause mouse\n");
+
         fflush(pipe);
         std::cin.get();
         pclose(pipe);
@@ -69,6 +71,17 @@ void GnuPlot::AddCommand_main_cmd(std::string cmd)
 void GnuPlot::AddCommand_point_cmd(std::string cmd)
 {
     points.push_back(cmd);
+}
+
+void GnuPlot::SetTitle(std::string title)
+{
+    config_cmd += "set title '" + title + "'\n";
+    config_cmd += "show title\n";
+}
+
+void GnuPlot::SetSize(Przedzial przedzial)
+{
+    SetSize(przedzial.begin-1,przedzial.end+1, -(przedzial.begin+przedzial.end+2), (przedzial.begin+przedzial.end+2));
 }
 
 void GnuPlot::SetSize(double range_x_begin, double range_x_end, double range_y_begin, double range_y_end)
