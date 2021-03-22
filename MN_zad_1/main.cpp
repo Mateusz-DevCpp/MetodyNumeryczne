@@ -166,21 +166,13 @@ int main()
     GnuPlot::AddPoint(m_zerowe_mt_stycznych,0,"1");
     GnuPlot::AddPoint(m_zerowe_mt_siecznych,0,"2");
     if(f_id == 0)
-    {
         GnuPlot::AddCommand_main_cmd(f_o_wielomianowa);
-    }
     else if(f_id == 1)
-    {
         GnuPlot::AddCommand_main_cmd(f_o_trygonometryczna);
-    }
     else if(f_id == 2)
-    {
         GnuPlot::AddCommand_main_cmd(f_o_wykladnicza);
-    }
     else if(f_id == 3)
-    {
         GnuPlot::AddCommand_main_cmd(f_o_mieszana);
-    }
     GnuPlot::Draw();
 
     return 0;
