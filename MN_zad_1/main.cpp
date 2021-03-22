@@ -20,13 +20,13 @@ int main()
 {
     std::vector<double> wsp_f;
     wsp_f.push_back(1);
-    wsp_f.push_back(4);
-    wsp_f.push_back(1);
+    wsp_f.push_back(2);
+    wsp_f.push_back(-5);
     wsp_f.push_back(-6);
     std::vector<double> wsp_p;
     wsp_p.push_back(3);
-    wsp_p.push_back(8);
-    wsp_p.push_back(1);
+    wsp_p.push_back(4);
+    wsp_p.push_back(-5);
 
     int f_id = 0;
     Przedzial przedzial;
@@ -163,32 +163,28 @@ int main()
     GnuPlot::SetLegend("disable");
     GnuPlot::EnableAxis();
     GnuPlot::SetSize(przedzial);
-    GnuPlot::AddPoint(m_zerowe_mt_siecznych,0,"1");
-    if(f_id == 0)
-        GnuPlot::AddCommand_main_cmd(f_o_wielomianowa);
-    else if(f_id == 1)
-        GnuPlot::AddCommand_main_cmd(f_o_trygonometryczna);
-    else if(f_id == 2)
-        GnuPlot::AddCommand_main_cmd(f_o_wykladnicza);
-    else if(f_id == 3)
-        GnuPlot::AddCommand_main_cmd(f_o_mieszana);
-    GnuPlot::SetTitle("Metoda siecznych");
-    GnuPlot::Draw();
-
-    GnuPlot::Clear();
-    GnuPlot::SetLegend("disable");
-    GnuPlot::EnableAxis();
-    GnuPlot::SetSize(przedzial);
     GnuPlot::AddPoint(m_zerowe_mt_stycznych,0,"1");
+    GnuPlot::AddPoint(m_zerowe_mt_siecznych,0,"2");
     if(f_id == 0)
+    {
         GnuPlot::AddCommand_main_cmd(f_o_wielomianowa);
+        GnuPlot::SetTitle(f_o_wielomianowa);
+    }
     else if(f_id == 1)
+    {
         GnuPlot::AddCommand_main_cmd(f_o_trygonometryczna);
+        GnuPlot::SetTitle(f_o_trygonometryczna);
+    }
     else if(f_id == 2)
+    {
         GnuPlot::AddCommand_main_cmd(f_o_wykladnicza);
+        GnuPlot::SetTitle(f_o_wykladnicza);
+    }
     else if(f_id == 3)
+    {
         GnuPlot::AddCommand_main_cmd(f_o_mieszana);
-    GnuPlot::SetTitle("Metoda stycznych");
+        GnuPlot::SetTitle(f_o_mieszana);
+    }
     GnuPlot::Draw();
 
     return 0;

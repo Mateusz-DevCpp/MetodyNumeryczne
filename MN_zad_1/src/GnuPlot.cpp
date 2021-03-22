@@ -80,7 +80,8 @@ void GnuPlot::SetTitle(std::string title)
 
 void GnuPlot::SetSize(Przedzial przedzial)
 {
-    SetSize(przedzial.begin-1,przedzial.end+1, -(przedzial.begin+przedzial.end+2), (przedzial.begin+przedzial.end+2));
+    double h = fabs(przedzial.begin) + fabs(przedzial.end);
+    SetSize(przedzial.begin-1,przedzial.end+1, -h, h);
 }
 
 void GnuPlot::SetSize(double range_x_begin, double range_x_end, double range_y_begin, double range_y_end)

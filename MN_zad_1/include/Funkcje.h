@@ -1,7 +1,7 @@
 
-#define f_o_wielomianowa "x**3 + 4*x**2 + x - 6"
-#define f_wielomianowa x*x*x + 4*x*x + x - 6
-#define p_f_wielomianowa 3*x*x + 8*x + 1
+#define f_o_wielomianowa "x**3 + 2*x**2 - 5*x - 6"
+#define f_wielomianowa x*x*x + 2*x*x - 5*x - 6
+#define p_f_wielomianowa 3*x*x + 4*x - 5
 
 #define f_o_trygonometryczna "sin(x) - cos(x + 1.0)"
 #define f_trygonometryczna sin(x) - cos(x + 1.0)

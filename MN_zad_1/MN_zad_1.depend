@@ -28,7 +28,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1616436443 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
+1616439876 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\main.cpp
 	<iostream>
 	<math.h>
 	<stdio.h>
@@ -59,9 +59,9 @@
 	"Define.h"
 	<vector>
 
-1616434948 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
+1616439137 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\funkcje.h
 
-1616435094 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\gnuplot.cpp
+1616440057 source:c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\src\gnuplot.cpp
 	"GnuPlot.h"
 
 1616434372 c:\users\mateusz\documents\github\metodynumeryczne\mn_zad_1\include\gnuplot.h
