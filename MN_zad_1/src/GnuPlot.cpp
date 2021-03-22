@@ -76,7 +76,6 @@ void GnuPlot::AddCommand_point_cmd(std::string cmd)
 void GnuPlot::SetTitle(std::string title)
 {
     config_cmd += "set title '" + title + "'\n";
-    config_cmd += "show title\n";
 }
 
 void GnuPlot::SetSize(Przedzial przedzial)
