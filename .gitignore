@@ -30,5 +30,5 @@
 *.exe
 *.out
 *.app
-MN_zad_1/MN_zad_1.depend
-MN_zad_1/MN_zad_1.layout
+*.depend
+*.layout
