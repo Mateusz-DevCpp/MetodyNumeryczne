@@ -22,6 +22,7 @@ class Macierz
 private:
     std::vector<Wiersz*> wiersze;
     Status status;
+    bool show_steps;
 
 public:
     Macierz();
@@ -30,6 +31,8 @@ public:
     ~Macierz();
 
     Status getStatus();
+    void showSteps(bool type);
+    void init();
     std::string statusToString();
 
     void Clear();

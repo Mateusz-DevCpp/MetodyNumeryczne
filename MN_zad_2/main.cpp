@@ -38,11 +38,13 @@ int main()
     }
 
     std::cout << matrix.toString() << std::endl;
+    matrix.showSteps(true);
 
-    matrix.oblicz();
+    Wiersz wynik = matrix.oblicz();
     cout << matrix.statusToString() << endl;
     if(matrix.getStatus() == Status::oznaczony)
-        std::cout << matrix.oblicz().toString() << std::endl;
+        std::cout << wynik.toString() << std::endl;
 
+    std::cout << "\n\nOSTATNIA WERSJA:\n" << matrix.toString() << std::endl;
     return 0;
 }

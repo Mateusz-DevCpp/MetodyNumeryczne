@@ -2,16 +2,18 @@
 
 Macierz::Macierz()
 {
-    ;
+    show_steps = false;
 }
 
 Macierz::Macierz(uint kolumny, uint wiersze)
 {
+    show_steps = false;
     allocateMemory(kolumny,wiersze);
 }
 
 Macierz::Macierz(std::string nazwa_pliku)
 {
+    show_steps = false;
     loadFromFile(nazwa_pliku);
 }
 
@@ -110,6 +112,8 @@ Status Macierz::getStatus()
 
 Wiersz Macierz::oblicz()
 {
+    init();
+    std::cout << toString() << std::endl;
     status = oznaczony;
 
     Wiersz wyniki(wiersze.size());
@@ -127,10 +131,12 @@ Wiersz Macierz::oblicz()
                 if(v2 != 0)
                 {
                     mnoznik_wiersza =  v1/v2;
-
-                    std::cout << v1 << " " << v2 << " " << mnoznik_wiersza << std::endl;
                     *wiersze[j] = (*wiersze[j]) - wiersze[i]->operator*(mnoznik_wiersza);
-                    std::cout << toString() << std::endl;
+
+                    if(show_steps)
+                    {
+                        std::cout << toString() << std::endl;
+                    }
                 }
             }
         }
@@ -163,4 +169,25 @@ std::string Macierz::statusToString()
     else if(status == nieoznaczony) return "Nieoznaczony";
     else if(status == sprzeczny) return "Sprzeczny";
     return "NULL";
+}
+
+void Macierz::showSteps(bool type)
+{
+    show_steps = type;
+}
+
+#include <cmath>
+void Macierz::init()
+{
+    if(fmod(wiersze[0]->getValue(0), 2) == 0)
+        return;
+
+    for(int i=0; i<getSizeR(); i++)
+    {
+        if(abs(wiersze[i]->getValue(0)) == 1 || fmod(wiersze[i]->getValue(0), 2) == 0)
+        {
+            std::swap(wiersze[0], wiersze[i]);
+            return;
+        }
+    }
 }
