@@ -60,7 +60,7 @@ double Wiersz::getFirstNonZeroValue()
 {
     for(int i=0; i<getSize(); i++)
     {
-        if(wartosci[i] != 0)
+        if(wartosci[i] < -0.0000001 || wartosci[i] > 0.0000001)
         {
             return wartosci[i];
         }
@@ -72,7 +72,7 @@ int Wiersz::getFirstNonZeroValueID()
 {
     for(int i=0; i<getSize(); i++)
     {
-        if(wartosci[i] != 0)
+        if(wartosci[i] < -0.0000001 || wartosci[i] > 0.0000001)
         {
             return i;
         }

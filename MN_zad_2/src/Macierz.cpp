@@ -154,7 +154,8 @@ Wiersz Macierz::oblicz()
         }
     }
 
-
+    if(status == oznaczony)
+        prepare();
     for(int i=0; i<wiersze.size(); i++)
     {
         wyniki.setValue(i, wiersze[i]->getValue(wiersze[0]->getSize()-1));
@@ -189,5 +190,23 @@ void Macierz::init()
             std::swap(wiersze[0], wiersze[i]);
             return;
         }
+    }
+}
+
+void Macierz::prepare()
+{
+    for(int i=0; i<getSizeC(); i++)
+    {
+        for(int j=0; j<getSizeR(); j++)
+        {
+            double tmp = getValue(j,i);
+            if(tmp > -0.0000001 && tmp < 0.0000001)
+                setValue(j,i,0);
+        }
+    }
+
+    for(int i=0; i<getSizeR(); i++)
+    {
+        std::swap(wiersze[i], wiersze[wiersze[i]->getFirstNonZeroValueID()]);
     }
 }

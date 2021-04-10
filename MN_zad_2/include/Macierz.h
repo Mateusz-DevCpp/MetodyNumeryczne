@@ -33,6 +33,7 @@ public:
     Status getStatus();
     void showSteps(bool type);
     void init();
+    void prepare();
     std::string statusToString();
 
     void Clear();
