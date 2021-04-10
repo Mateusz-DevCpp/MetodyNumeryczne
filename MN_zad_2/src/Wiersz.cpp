@@ -56,6 +56,30 @@ std::string Wiersz::toString()
     return stream.str();
 }
 
+double Wiersz::getFirstNonZeroValue()
+{
+    for(int i=0; i<getSize(); i++)
+    {
+        if(wartosci[i] != 0)
+        {
+            return wartosci[i];
+        }
+    }
+    return 0;
+}
+
+int Wiersz::getFirstNonZeroValueID()
+{
+    for(int i=0; i<getSize(); i++)
+    {
+        if(wartosci[i] != 0)
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
 
 
 

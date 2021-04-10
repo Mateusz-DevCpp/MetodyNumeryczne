@@ -7,28 +7,42 @@ using namespace std;
 
 int main()
 {
-    /*
-    Wiersz *w1 = new Wiersz(3);
-    Wiersz *w2 = new Wiersz(3);
-    w1->setValue(0,1);
-    w1->setValue(1,2);
-    w1->setValue(2,3);
-    w2->setValue(0,7);
-    w2->setValue(1,8);
-    w2->setValue(2,9);
+    Macierz matrix;
+    char load_from_file;
+    cout << "Wczytac z pliku (t/n):";
+    cin >> load_from_file;
+    if(load_from_file == 'y' || load_from_file == 'Y' || load_from_file == 't' || load_from_file == 'T')
+    {
+        matrix.loadFromFile("plik.txt");
+    }
+    else
+    {
+        cout << "Rozmiar:\ncol:>";
+        int matrix_size_k, matrix_size_w;
+        cin >> matrix_size_k;
+        cout << "row:>";
+        cin >> matrix_size_w;
+        matrix.allocateMemory(matrix_size_k, matrix_size_w);
 
-    Wiersz w(3);
-    w = w1->operator*(3);
-    std::cout << w1->toString();
-    std::cout << w.toString();
-    return 0;
-*/
+        double tmp_v;
+        for(int i=0; i<matrix_size_k; i++)
+        {
+            for(int j=0; j<matrix_size_w; j++)
+            {
+                cout << "col:" << i << " - row:" << j << " =:";
 
-    Macierz ma("plik.txt");
+                cin >> tmp_v;
+                matrix.setValue(j,i,tmp_v);
+            }
+        }
+    }
 
-    std::cout << ma.toString() << std::endl;
-    std::cout << ma.oblicz().toString() << std::endl << std::endl;
-    std::cout << ma.toString() << std::endl;
+    std::cout << matrix.toString() << std::endl;
+
+    matrix.oblicz();
+    cout << matrix.statusToString() << endl;
+    if(matrix.getStatus() == Status::oznaczony)
+        std::cout << matrix.oblicz().toString() << std::endl;
 
     return 0;
 }

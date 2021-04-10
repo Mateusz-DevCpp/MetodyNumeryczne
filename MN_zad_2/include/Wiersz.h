@@ -18,6 +18,8 @@ public:
     double getValue(int id) const;
 
     unsigned int getSize() const;
+    double getFirstNonZeroValue();
+    int getFirstNonZeroValueID();
 
     std::string toString();
 

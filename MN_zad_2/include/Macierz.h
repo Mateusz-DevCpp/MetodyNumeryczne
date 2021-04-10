@@ -10,23 +10,37 @@
 
 #include "Wiersz.h"
 
+enum Status
+{
+    oznaczony = 0,
+    nieoznaczony = 1,
+    sprzeczny = 2
+};
+
 class Macierz
 {
 private:
     std::vector<Wiersz*> wiersze;
-
-private:
-    void allocateMemory(uint n, uint m);
+    Status status;
 
 public:
-    Macierz(uint n, uint m);
+    Macierz();
+    Macierz(uint kolumny, uint wiersze);
     Macierz(std::string nazwa_pliku);
     ~Macierz();
 
-    double getValue(uint n, uint m);
-    bool setValue(uint n, uint m, double v);
-    int getSizeX();
-    int getSizeY();
+    Status getStatus();
+    std::string statusToString();
+
+    void Clear();
+    void loadFromFile(std::string nazwa_pliku);
+    void allocateMemory(uint kolumny, uint wiersze);
+
+
+    double getValue(uint wiersz, uint kolumna);
+    bool setValue(uint wiersz, uint kolumna, double v);
+    int getSizeC();
+    int getSizeR();
 
     Wiersz oblicz();
 
