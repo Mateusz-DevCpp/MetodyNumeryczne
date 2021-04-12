@@ -1,14 +1,16 @@
 #ifndef MACIERZ_H
 #define MACIERZ_H
 
-#include <vector>
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <algorithm>
+#include <cmath>
 
 #define uint unsigned int
 
 #include "Wiersz.h"
+#include "Raport.h"
 
 enum Status
 {
@@ -23,6 +25,11 @@ private:
     std::vector<Wiersz*> wiersze;
     Status status;
     bool show_steps;
+
+    Raport raport;
+
+private:
+    void resetKonfig();
 
 public:
     Macierz();
@@ -49,6 +56,8 @@ public:
     Wiersz oblicz();
 
     std::string toString();
+    Raport getRaport();
+    int iloscZer();
 };
 
 #endif // MACIERZ_H

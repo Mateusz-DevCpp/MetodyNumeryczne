@@ -2,24 +2,30 @@
 
 Macierz::Macierz()
 {
-    show_steps = false;
+    resetKonfig();
 }
 
 Macierz::Macierz(uint kolumny, uint wiersze)
 {
-    show_steps = false;
+    resetKonfig();
     allocateMemory(kolumny,wiersze);
 }
 
 Macierz::Macierz(std::string nazwa_pliku)
 {
-    show_steps = false;
+    resetKonfig();
     loadFromFile(nazwa_pliku);
 }
 
 Macierz::~Macierz()
 {
     Clear();
+}
+
+void Macierz::resetKonfig()
+{
+    show_steps = false;
+    raport.reset();
 }
 
 void Macierz::Clear()
@@ -113,17 +119,19 @@ Status Macierz::getStatus()
 Wiersz Macierz::oblicz()
 {
     init();
-    std::cout << toString() << std::endl;
     status = oznaczony;
-
     Wiersz wyniki(wiersze.size());
-
     double mnoznik_wiersza = 0;
+    if(show_steps)
+    {
+        std::cout << toString() << std::endl;
+    }
 
     for(int i=0; i<getSizeR(); i++)
     {
         for(int j=0; j<getSizeR(); j++)
         {
+            raport.ilosc_iteracji++;
             if(i != j)
             {
                 double v1 = getValue(j,i);
@@ -131,7 +139,9 @@ Wiersz Macierz::oblicz()
                 if(v2 != 0)
                 {
                     mnoznik_wiersza =  v1/v2;
-                    *wiersze[j] = (*wiersze[j]) - wiersze[i]->operator*(mnoznik_wiersza);
+                    *wiersze[j] = *wiersze[j] - *wiersze[i]*mnoznik_wiersza;
+
+                    raport.ilosc_iteracji_z_dzialaniami++;
 
                     if(show_steps)
                     {
@@ -139,8 +149,10 @@ Wiersz Macierz::oblicz()
                     }
                 }
             }
+            raport.dodajHistorie(raport.ilosc_iteracji, iloscZer());
         }
     }
+
     for(int i=0; i<getSizeR(); i++)
     {
         *wiersze[i] = *wiersze[i] / wiersze[i]->getFirstNonZeroValue();
@@ -154,13 +166,13 @@ Wiersz Macierz::oblicz()
         }
     }
 
-    if(status == oznaczony)
-        prepare();
-    for(int i=0; i<wiersze.size(); i++)
+    prepare();
+
+    for(unsigned short int i=0; i<wiersze.size(); i++)
     {
         wyniki.setValue(i, wiersze[i]->getValue(wiersze[0]->getSize()-1));
-
     }
+
     return wyniki;
 }
 
@@ -177,7 +189,7 @@ void Macierz::showSteps(bool type)
     show_steps = type;
 }
 
-#include <cmath>
+
 void Macierz::init()
 {
     if(fmod(wiersze[0]->getValue(0), 2) == 0)
@@ -205,8 +217,38 @@ void Macierz::prepare()
         }
     }
 
-    for(int i=0; i<getSizeR(); i++)
+    if(status == oznaczony)
     {
-        std::swap(wiersze[i], wiersze[wiersze[i]->getFirstNonZeroValueID()]);
+        for(int i=0; i<getSizeR(); i++)
+        {
+            std::swap(wiersze[i], wiersze[wiersze[i]->getFirstNonZeroValueID()]);
+        }
     }
+}
+
+Raport Macierz::getRaport()
+{
+    return raport;
+}
+
+int Macierz::iloscZer()
+{
+    int ilosc = 0;
+    for(int i=0; i<getSizeC(); i++)
+    {
+        for(int j=0; j<getSizeR(); j++)
+        {
+            double tmp = getValue(j,i);
+            if(tmp == 0)
+            {
+                ilosc++;
+            }
+            else if(tmp > -0.0000001 && tmp < 0.0000001)
+            {
+                setValue(j,i,0);
+                ilosc++;
+            }
+        }
+    }
+    return ilosc;
 }

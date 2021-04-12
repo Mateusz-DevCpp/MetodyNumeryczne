@@ -12,7 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-std=c++14" />
+					<Add option="-std=gnu++11" />
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
@@ -35,10 +35,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="gnuplot_manager/include/Define.h" />
+		<Unit filename="gnuplot_manager/include/GnuPlot.h" />
+		<Unit filename="gnuplot_manager/src/GnuPlot.cpp" />
 		<Unit filename="include/Macierz.h" />
+		<Unit filename="include/Raport.h" />
 		<Unit filename="include/Wiersz.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Macierz.cpp" />
+		<Unit filename="src/Raport.cpp" />
 		<Unit filename="src/Wiersz.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
