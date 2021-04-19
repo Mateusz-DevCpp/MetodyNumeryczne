@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="MN_zad_2" />
+		<Option title="MN_zad_3" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/MN_zad_2" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/MN_zad_3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -18,7 +18,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/MN_zad_2" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/MN_zad_3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -35,19 +35,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="gnuplot_manager/Gnuplot_manager.h" />
 		<Unit filename="gnuplot_manager/include/Define.h" />
 		<Unit filename="gnuplot_manager/include/GnuPlot.h" />
-		<Unit filename="gnuplot_manager/manager_gnuplot.h" />
 		<Unit filename="gnuplot_manager/src/GnuPlot.cpp" />
-		<Unit filename="include/Macierz.h" />
-		<Unit filename="include/Raport.h" />
-		<Unit filename="include/Wiersz.h" />
+		<Unit filename="include/Czebyszew.h" />
+		<Unit filename="include/Define.h" />
+		<Unit filename="include/Funkcja.h" />
+		<Unit filename="include/Horner.h" />
+		<Unit filename="include/Interpolacja.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Macierz.cpp" />
-		<Unit filename="src/Raport.cpp" />
-		<Unit filename="src/Wiersz.cpp" />
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
+		<Unit filename="src/Czebyszew.cpp" />
+		<Unit filename="src/Funkcja.cpp" />
+		<Unit filename="src/Horner.cpp" />
+		<Unit filename="src/Interpolacja.cpp" />
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

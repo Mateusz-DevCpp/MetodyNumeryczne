@@ -40,6 +40,7 @@ void Raport::drawRaport()
     GnuPlot::Clear();
     GnuPlot::SetLegend("disable");
     GnuPlot::EnableAxis();
+    GnuPlot::EnableGrid();
     GnuPlot::SetSize(Range(0.0, (double)historia[historia.size()-1].x), Range(0.0, (double)historia[historia.size()-1].y));
     GnuPlot::AddPoints(historia,"2","000000");
     GnuPlot::SetTitle("Ilosc zer w macierzy od ilosci iteracji");

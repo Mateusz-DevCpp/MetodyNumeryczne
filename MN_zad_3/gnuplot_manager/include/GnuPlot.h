@@ -1,12 +1,3 @@
-/**<!>**
- *
- * \Informations
- * \Author: Mateusz Darul
- * \Version: 1.2.1
- * \Contact: mateuszdarul7@gmail.com
- *
- **<!>**/
-
 #ifndef __GNUPLOT_H__
 #define __GNUPLOT_H__
 
@@ -15,6 +6,9 @@
 #include <stdlib.h>
 #include <vector>
 #include <math.h>
+
+#include "Define.h"
+#include "../../include/Define.h"
 
 #define GNUPLOT_NAME "gnuplot"
 
@@ -30,8 +24,9 @@ public:
     static void Clear();
     static void Draw();
     static void AddPoint(double x, double y, std::string point_type="1", std::string rgb_color="FF0000", std::string title="-");
-    static void AddPoints(std::vector<Point<double>> points ,std::string point_type="1", std::string rgb_color="FF0000", std::string title="-");
+    static void AddPoints(std::vector<Punkt<double>> points ,std::string point_type="1", std::string rgb_color="FF0000", std::string title="-");
     static void AddLine(double x1, double y1, double x2, double y2, std::string point_type="1", std::string rgb_color="FF0000");
+    static void AddLines(std::vector<Punkt<double>> points ,std::string point_type="1", std::string rgb_color="FF0000",  std::string title="-");
 
     static void SetSize(double range_x_begin, double range_x_end, double range_y_begin, double range_y_end);
     static void SetSize(Range przedzial_x, Range przedzial_y);
@@ -48,5 +43,7 @@ public:
     static void AddCommand_main_cmd(std::string cmd);
     static void AddCommand_point_cmd(std::string cmd);
 };
+
+/** std::string group -> Liczba calkowita np "0" lub "2" ... */
 
 #endif // __GNUPLOT_H__
