@@ -1,66 +1,45 @@
 #include "Interpolacja.h"
 
-std::vector<double> liczAn(std::vector<Punkt<double>> wezly)
+double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton_wspolczynniki(std::vector<Punkt<double>> wezly, int n)
 {
-    std::vector<double> a_;
+    double wynik = 0;
+    double tmp = 1;
 
-    double an = 1;
-
-    for(int i=0; i<wezly.size(); i++)
-    {
-        a_.push_back(an);
-        double iloczyn = 1;
-        for(int j=0; j<wezly.size(); j++)
-        {
-            if(i != j)
+    for(int k = 0; k < n; k++) {
+        for(int j=0; j < n; j++) {
+            if(k==j)
             {
-                iloczyn *= (wezly[i].x - wezly[j].x);
+                continue;
             }
+            tmp *= (wezly[k].x - wezly[j].x);
         }
-
-        an += wezly[i].y / iloczyn;
+        wynik += (wezly[k].y / tmp);
+        tmp = 1;
     }
-
-    std::vector<double> a;
-    for(int i=a_.size(); i>=0; i--)
-        a.push_back(a_[i]);
-
-    return a;
-}
-
-std::vector<double> liczQn(std::vector<Punkt<double>> wezly, double x)
-{
-    std::vector<double> q_;
-    double qn = wezly[0].y;
-
-    for(int i=0; i<wezly.size(); i++)
-    {
-        q_.push_back(qn);
-
-        qn *= (x - wezly[i].x);
-    }
-
-    std::vector<double> q;
-    for(int i=q_.size(); i>=0; i--)
-        q.push_back(q_[i]);
-
-    return q_;
-}
-
-double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(std::vector<Punkt<double>> wezly, double x)
-{
-    double wynik = 0, tmp;
-
-    std::vector<double> a = liczAn(wezly);
-    std::vector<double> q = liczQn(wezly, x);
-
-    for(int k=0; k<wezly.size(); k++)
-    {
-        wynik += a[k] * q[k];
-    }
-
     return wynik;
+
 }
+
+double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton_wartosc(std::vector<Punkt<double>> wezly, double x, int n)
+{
+    double tmp = 1.0;
+    for(int i = 0;i<n-1;i++)
+    {
+        tmp *= (x-wezly[i].x);
+    }
+    return tmp;
+}
+
+double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(std::vector<Punkt<double>> wezly, double x, int n)
+{
+    double finish = 0;
+    for(int i = 0; i<n;i++)
+    {
+        finish += obliczWartoscFunkcjiInterpolowanej_Newton_wspolczynniki(wezly, i+1) * obliczWartoscFunkcjiInterpolowanej_Newton_wartosc(wezly, x, i+1);
+    }
+    return finish;
+}
+
 
 std::vector<Punkt<double>> Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPrzedziale_Newton(Punkt<double> przedzial, std::vector<Punkt<double>> wezly, double odleglosc_miedy_punktami)
 {
@@ -68,11 +47,13 @@ std::vector<Punkt<double>> Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPr
 
     for(double x=przedzial.x; x<=przedzial.y; x+=odleglosc_miedy_punktami)
     {
-        wynik.push_back( Punkt<double>(x, obliczWartoscFunkcjiInterpolowanej_Newton(wezly, x)) );
+        wynik.push_back( Punkt<double>(x, obliczWartoscFunkcjiInterpolowanej_Newton(wezly, x, wezly.size())) );
     }
 
     return wynik;
 }
+
+
 
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Lagrange(std::vector<Punkt<double>> wezly, double x)
 {
