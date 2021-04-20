@@ -13,6 +13,14 @@ using namespace std;
 
 int main()
 {
+    /*
+    char fu = 'b';
+    double x = 1;
+    vector<Punkt<double>> wezly_ = Czebyszew::obliczWartosciWezlow(10, Punkt<double>(-2,2), fu);
+    cout << Funkcja::oblicz(fu, x) << " : " << Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(wezly_, x) << endl;
+    return 0;
+    */
+
     char wybor;
     cout << "Wybierz funkcje:" << endl;
     for(int i=1; i<=5; i++)
