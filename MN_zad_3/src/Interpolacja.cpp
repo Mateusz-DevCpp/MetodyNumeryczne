@@ -1,62 +1,45 @@
 #include "Interpolacja.h"
 
-std::vector<double> liczAn(std::vector<Punkt<double>> wezly)
+double Interpolacja::liczAn(std::vector<Punkt<double>> wezly, int n)
 {
-    std::vector<double> a_;
+    double an = 0;
 
-    double an = 1;
-
-    for(int i=0; i<wezly.size(); i++)
+    double tmp;
+    for(int k = 0; k <= n; k++)
     {
-        a_.push_back(an);
-        double iloczyn = 1;
-        for(int j=0; j<wezly.size(); j++)
+        tmp = 1;
+        for(int j=0; j <= n; j++)
         {
-            if(i != j)
+            if(k != j)
             {
-                iloczyn *= (wezly[i].x - wezly[j].x);
+                tmp *= (wezly[k].x - wezly[j].x);
             }
         }
-
-        an += wezly[i].y / iloczyn;
+        an += (wezly[k].y / tmp);
     }
 
-    std::vector<double> a;
-    for(int i=a_.size(); i>=0; i--)
-        a.push_back(a_[i]);
-
-    return a;
+    return an;
 }
 
-std::vector<double> liczQn(std::vector<Punkt<double>> wezly, double x)
+double Interpolacja::liczQn(std::vector<Punkt<double>> wezly, double x, int n)
 {
-    std::vector<double> q_;
-    double qn = wezly[0].y;
+    double qn = 1;
 
-    for(int i=0; i<wezly.size(); i++)
+    for(int i=0; i<n; i++)
     {
-        q_.push_back(qn);
-
         qn *= (x - wezly[i].x);
     }
 
-    std::vector<double> q;
-    for(int i=q_.size(); i>=0; i--)
-        q.push_back(q_[i]);
-
-    return q_;
+    return qn;
 }
 
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(std::vector<Punkt<double>> wezly, double x)
 {
-    double wynik = 0, tmp;
-
-    std::vector<double> a = liczAn(wezly);
-    std::vector<double> q = liczQn(wezly, x);
+    double wynik = 0;
 
     for(int k=0; k<wezly.size(); k++)
     {
-        wynik += a[k] * q[k];
+        wynik += liczAn(wezly, k) * liczQn(wezly, x, k);
     }
 
     return wynik;
@@ -73,6 +56,9 @@ std::vector<Punkt<double>> Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPr
 
     return wynik;
 }
+
+
+
 
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Lagrange(std::vector<Punkt<double>> wezly, double x)
 {
