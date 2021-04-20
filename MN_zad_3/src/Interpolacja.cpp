@@ -2,20 +2,18 @@
 
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(std::vector<Punkt<double>> wezly, double x)
 {
-    double wynik = 0;
-
-    for (int i = 0; i < wezly.size(); i++)
+    double wynik = 0, tmp;
+    for(int k = 0; k < wezly.size(); k++)
     {
-        double tmp = 1.0;
-
-        for (int j=0; j<wezly.size(); j++)
+        tmp = wezly[k].y;
+        for(int j=0; j<wezly.size(); j++)
         {
-            if (j != i)
+            if (k != j)
             {
-                tmp *= ((x - wezly[j].x) / (wezly[i].x - wezly[j].x));
+                tmp *= (x - j)/(k-j);
             }
         }
-        wynik += wezly[i].y * tmp;
+        wynik += tmp;
     }
 
     return wynik;
@@ -37,15 +35,15 @@ std::vector<Punkt<double>> Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPr
 
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Lagrange(std::vector<Punkt<double>> wezly, double x)
 {
-    double wynik = 0;
+    double wynik = 0, tmp;
     for(int i=0; i<wezly.size(); i++)
     {
-        double tmp = wezly[i].y;
+        tmp = wezly[i].y;
         for(int j=0; j<wezly.size(); j++)
         {
-            if(i!=j)
+            if(i != j)
             {
-                tmp *= ( (x - wezly[j].x)/(wezly[i].x - wezly[j].x) );
+                tmp *= ((x - wezly[j].x) / (wezly[i].x - wezly[j].x));
             }
         }
         wynik += tmp;

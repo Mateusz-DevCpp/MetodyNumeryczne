@@ -39,12 +39,14 @@
 		<Unit filename="gnuplot_manager/include/Define.h" />
 		<Unit filename="gnuplot_manager/include/GnuPlot.h" />
 		<Unit filename="gnuplot_manager/src/GnuPlot.cpp" />
+		<Unit filename="include/Bledy.h" />
 		<Unit filename="include/Czebyszew.h" />
 		<Unit filename="include/Define.h" />
 		<Unit filename="include/Funkcja.h" />
 		<Unit filename="include/Horner.h" />
 		<Unit filename="include/Interpolacja.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Bledy.cpp" />
 		<Unit filename="src/Czebyszew.cpp" />
 		<Unit filename="src/Funkcja.cpp" />
 		<Unit filename="src/Horner.cpp" />
