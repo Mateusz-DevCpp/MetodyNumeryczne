@@ -69,6 +69,7 @@ double Newton_Cotes::ObliczINF(funkcja f, double dokladnosc, double krok)
 
 			for(int i=0; i<m; i++)
 			{
+			    ilosc_iteracji++;
 				b = a + h;
 				double mid = (a+b)/2;
 				wynik += ((b-a)/6)*(f(a)*f_w(a) + 4*f(mid)*f_w(mid) + f(b)*f_w(b));

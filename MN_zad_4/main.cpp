@@ -42,7 +42,7 @@ int main()
         if(wyb == '1')
         {
             double pp, kp;
-            cout << "Przedzial od: \n >";
+            cout << "Przedzial od: \n>";
             cin >> pp;
             cout << "do \n>";
             cin >> kp;

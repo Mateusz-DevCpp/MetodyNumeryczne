@@ -40,7 +40,8 @@ void Wykres::Rysuj(std::string funkcja_str, funkcja wzor, double przedzial_p, do
 
     GnuPlot::Clear();
     GnuPlot::EnablePause();
-    GnuPlot::AddPoints(obszar_calki, "1", "ff0000", "Calka");
+    GnuPlot::EnableAxis();
+    GnuPlot::AddPoints(obszar_calki, "0", "ff0000", "Calka");
     GnuPlot::AddLines(punkty_funkcji,"3","000000","Funkcja");
     GnuPlot::SetTitle(funkcja_str+"e^-^x^^2");
     GnuPlot::Draw();
