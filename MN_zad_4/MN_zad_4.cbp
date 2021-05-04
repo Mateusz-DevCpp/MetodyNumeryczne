@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=gnu++11" />
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
@@ -34,13 +35,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="gnuplot_manager/Gnuplot_manager.h" />
+		<Unit filename="gnuplot_manager/include/Define.h" />
+		<Unit filename="gnuplot_manager/include/GnuPlot.h" />
+		<Unit filename="gnuplot_manager/src/GnuPlot.cpp" />
+		<Unit filename="include/Define.h" />
 		<Unit filename="include/Funkcje.h" />
 		<Unit filename="include/Hermit.h" />
+		<Unit filename="include/Horner.h" />
 		<Unit filename="include/Newton_Cotes.h" />
+		<Unit filename="include/Wykres.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Funkcje.cpp" />
 		<Unit filename="src/Hermit.cpp" />
+		<Unit filename="src/Horner.cpp" />
 		<Unit filename="src/Newton_Cotes.cpp" />
+		<Unit filename="src/Wykres.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

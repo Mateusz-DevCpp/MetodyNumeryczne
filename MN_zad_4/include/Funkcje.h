@@ -1,6 +1,8 @@
 #ifndef FUNKCJE_H
 #define FUNKCJE_H
 
+#include "Horner.h"
+
 #include <string>
 #include <cmath>
 

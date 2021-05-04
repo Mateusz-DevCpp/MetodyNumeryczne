@@ -2,6 +2,7 @@
 
 #include "Newton_Cotes.h"
 #include "Hermit.h"
+#include "Wykres.h"
 
 using namespace std;
 
@@ -9,18 +10,14 @@ int main()
 {
     Hermit::wczytajKwadratury();
 
-    funkcja f[4];
-    f[0] = funkcja1;
-    f[1] = funkcja2;
-    f[2] = funkcja3;
-    f[3] = funkcja4;
+    funkcja f[4] = {funkcja1,funkcja2,funkcja3,funkcja4};
+
+    funkcja_srt fs[4] = {funkcja1_ts,funkcja2_ts,funkcja3_ts,funkcja4_ts};
 
     int wybor;
     cout << "Wybierz funkcje:" << endl;
-    cout << "1. " << funkcja1_ts() << endl;
-    cout << "2. " << funkcja2_ts() << endl;
-    cout << "3. " << funkcja3_ts() << endl;
-    cout << "4. " << funkcja4_ts() << endl;
+    for(int i=0; i<4; i++)
+        cout << i+1 << ". " << fs[i]() << endl;
     cout << ">";
     cin >> wybor;
     wybor--;
@@ -51,10 +48,12 @@ int main()
             cin >> kp;
 
             int il;
-            cout << "Ile przedzialow: \n >";
+            cout << "Ile przedzialow: \n>";
             cin >> il;
 
-            cout << Newton_Cotes::Oblicz(f[wybor], pp, kp, dok, il) << endl;
+            cout << "Wynik: " << Newton_Cotes::Oblicz(f[wybor], pp, kp, dok, il) << endl;
+            cout << "Wykonano " << Newton_Cotes::ilosc_iteracji << " iteracji." << endl;
+            Wykres::Rysuj(fs[wybor](), f[wybor], pp, kp);
         }
         else
         {
@@ -62,7 +61,9 @@ int main()
             cout << "Podaj krok" << endl << ">";
             cin >> kr;
 
-            cout << Newton_Cotes::ObliczINF(f[wybor], dok, kr) << endl;
+            cout << "Wynik: " << Newton_Cotes::ObliczINF(f[wybor], dok, kr) << endl;
+            cout << "Wykonano " << Newton_Cotes::ilosc_iteracji << " iteracji." << endl;
+            Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
         }
     }
     else
@@ -71,7 +72,10 @@ int main()
         cout << "Podaj ilosc wezlow (2,3,4,5):" << endl << ">";
         cin >> il;
 
-        cout << Hermit::ObliczINF(f[wybor], 2) << endl;
+        cout << "Wynik: " << Hermit::ObliczINF(f[wybor], il) << endl;
+        cout << "Wykonano " << Hermit::ilosc_iteracji << " iteracji." << endl;
+        Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
     }
+
     return 0;
 }

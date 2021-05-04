@@ -12,6 +12,7 @@ private:
     static double kwadratura[4][5][2];
 
 public:
+    static int ilosc_iteracji;
     static double ObliczINF(funkcja f, int ilosc_wezlow);
     static void wczytajKwadratury();
 };
