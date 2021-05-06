@@ -4,6 +4,8 @@
 #include <cmath>
 
 #include "Funkcje.h"
+#include "Define.h"
+#include "Wykres.h"
 
 class Newton_Cotes
 {

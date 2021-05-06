@@ -5,6 +5,8 @@ int Hermit::ilosc_iteracji=0;
 
 double Hermit::ObliczINF(funkcja f, int ilosc_wezlow)
 {
+    std::vector<Punkt<double>> punkty;
+
     ilosc_wezlow -= 2;
     double suma = 0;
 
@@ -13,9 +15,13 @@ double Hermit::ObliczINF(funkcja f, int ilosc_wezlow)
         ilosc_iteracji++;
         if(kwadratura[ilosc_wezlow][i][waga] != 0)
         {
-            suma += kwadratura[ilosc_wezlow][i][waga] * f(kwadratura[ilosc_wezlow][i][wezel] );
+            suma += kwadratura[ilosc_wezlow][i][waga] * f(kwadratura[ilosc_wezlow][i][wezel]);
+            punkty.push_back(Punkt<double>(kwadratura[ilosc_wezlow][i][wezel], f(kwadratura[ilosc_wezlow][i][wezel])));
         }
     }
+
+    Wykres::Rysuj_Hermite(punkty);
+
     return suma;
 }
 

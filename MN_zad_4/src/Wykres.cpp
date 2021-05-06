@@ -38,11 +38,46 @@ void Wykres::Rysuj(std::string funkcja_str, funkcja wzor, double przedzial_p, do
         }
     }
 
-    GnuPlot::Clear();
     GnuPlot::EnablePause();
     GnuPlot::EnableAxis();
-    GnuPlot::AddPoints(obszar_calki, "0", "ff0000", "Calka");
-    GnuPlot::AddLines(punkty_funkcji,"3","000000","Funkcja");
+    GnuPlot::SetSize(-4,4,minim_y, maxim_y);
+    GnuPlot::AddPoints(obszar_calki, "0", "8c8c8c", "Wynik calki");
+    GnuPlot::AddLines(punkty_funkcji,"3","00FFFF","Funkcja");
     GnuPlot::SetTitle(funkcja_str+"e^-^x^^2");
     GnuPlot::Draw();
+}
+
+void Wykres::Rysuj_Hermite(std::vector<Punkt<double>> punkty)
+{
+    std::vector<Punkt<double>> punkty_funkcji_interpolowanej = Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPrzedziale_Lagrange(Punkt<double>(-4,4), punkty, 0.01);
+
+    GnuPlot::AddLines(punkty_funkcji_interpolowanej, "1", "FF0000", "Wielomian Hermite'a");
+    GnuPlot::AddPoints(punkty, "1", "FF0000", "Punkty Hermite'a");
+}
+
+void Wykres::Rysuj_Simsona(std::vector<Punkt<double>> punkty)
+{
+    std::vector<Punkt<double>> punkty_funkcji_interpolowanej;
+
+    for(int i=0; i<punkty.size()-5; i++)
+    {
+        std::vector<Punkt<double>> wezly;
+        for(int x=0; x<3; x++)
+        {
+            wezly.push_back(Punkt<double>(punkty[i+x].x, punkty[i+x].y));
+        }
+
+        std::vector<Punkt<double>> tmp;
+        tmp = Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPrzedziale_Lagrange(Punkt<double>(wezly[0].x,wezly[2].x), wezly, 0.01);
+        for(int z=0; z<tmp.size(); z++)
+        {
+            punkty_funkcji_interpolowanej.push_back(tmp[z]);
+        }
+
+        wezly.clear();
+        tmp.clear();
+    }
+
+    GnuPlot::AddLines(punkty_funkcji_interpolowanej, "1", "FF0000", "Metoda Simpsona");
+    GnuPlot::AddPoints(punkty, "1", "FF0000", "Punkty Simpsona");
 }

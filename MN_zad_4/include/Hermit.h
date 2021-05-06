@@ -2,6 +2,8 @@
 #define HERMIT_H
 
 #include "Funkcje.h"
+#include "Define.h"
+#include "Wykres.h"
 
 #define wezel 0
 #define waga 1
