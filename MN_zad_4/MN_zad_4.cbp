@@ -45,6 +45,8 @@
 		<Unit filename="include/Horner.h" />
 		<Unit filename="include/Newton_Cotes.h" />
 		<Unit filename="include/Wykres.h" />
+		<Unit filename="interpolacja/Interpolacja.cpp" />
+		<Unit filename="interpolacja/Interpolacja.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Funkcje.cpp" />
 		<Unit filename="src/Hermit.cpp" />

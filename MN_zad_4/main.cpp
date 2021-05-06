@@ -47,35 +47,38 @@ int main()
             cout << "do \n>";
             cin >> kp;
 
+            Wykres::Rysuj(fs[wybor](), f[wybor], pp, kp);
+
             int il;
             cout << "Ile przedzialow: \n>";
             cin >> il;
 
             cout << "Wynik: " << Newton_Cotes::Oblicz(f[wybor], pp, kp, dok, il) << endl;
             cout << "Wykonano " << Newton_Cotes::ilosc_iteracji << " iteracji." << endl;
-            Wykres::Rysuj(fs[wybor](), f[wybor], pp, kp);
         }
         else
         {
+            Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
             double kr;
             cout << "Podaj krok" << endl << ">";
             cin >> kr;
 
             cout << "Wynik: " << Newton_Cotes::ObliczINF(f[wybor], dok, kr) << endl;
             cout << "Wykonano " << Newton_Cotes::ilosc_iteracji << " iteracji." << endl;
-            Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
         }
     }
     else
     {
+        Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
         double il;
         cout << "Podaj ilosc wezlow (2,3,4,5):" << endl << ">";
         cin >> il;
 
         cout << "Wynik: " << Hermit::ObliczINF(f[wybor], il) << endl;
         cout << "Wykonano " << Hermit::ilosc_iteracji << " iteracji." << endl;
-        Wykres::Rysuj(fs[wybor](), f[wybor], -4, 4);
     }
+
+    Wykres::Draw();
 
     return 0;
 }

@@ -15,6 +15,7 @@ public:
     static void Rysuj(std::string funkcja_str, funkcja wzor, double przedzial_p, double przedzial_k);
     static void Rysuj_Hermite(std::vector<Punkt<double>> punkty);
     static void Rysuj_Simsona(std::vector<Punkt<double>> punkty);
+    static void Draw();
 };
 
 #endif // WYKRES_H

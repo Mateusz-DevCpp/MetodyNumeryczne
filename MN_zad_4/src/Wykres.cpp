@@ -38,13 +38,10 @@ void Wykres::Rysuj(std::string funkcja_str, funkcja wzor, double przedzial_p, do
         }
     }
 
-    GnuPlot::EnablePause();
-    GnuPlot::EnableAxis();
     GnuPlot::SetSize(-4,4,minim_y, maxim_y);
     GnuPlot::AddPoints(obszar_calki, "0", "8c8c8c", "Wynik calki");
     GnuPlot::AddLines(punkty_funkcji,"3","00FFFF","Funkcja");
     GnuPlot::SetTitle(funkcja_str+"e^-^x^^2");
-    GnuPlot::Draw();
 }
 
 void Wykres::Rysuj_Hermite(std::vector<Punkt<double>> punkty)
@@ -59,7 +56,7 @@ void Wykres::Rysuj_Simsona(std::vector<Punkt<double>> punkty)
 {
     std::vector<Punkt<double>> punkty_funkcji_interpolowanej;
 
-    for(int i=0; i<punkty.size()-5; i++)
+    for(int i=0; i<punkty.size()-1; i++)
     {
         std::vector<Punkt<double>> wezly;
         for(int x=0; x<3; x++)
@@ -80,4 +77,11 @@ void Wykres::Rysuj_Simsona(std::vector<Punkt<double>> punkty)
 
     GnuPlot::AddLines(punkty_funkcji_interpolowanej, "1", "FF0000", "Metoda Simpsona");
     GnuPlot::AddPoints(punkty, "1", "FF0000", "Punkty Simpsona");
+}
+
+void Wykres::Draw()
+{
+    GnuPlot::EnablePause();
+    GnuPlot::EnableAxis();
+    GnuPlot::Draw();
 }
