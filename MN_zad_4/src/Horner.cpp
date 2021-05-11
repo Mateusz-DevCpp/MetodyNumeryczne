@@ -17,7 +17,7 @@ double Horner::wartoscWielomianu(double x, std::vector<double> wspolczynniki)
 {
     double wynik = 0;
 
-    for(int i=0; i<wspolczynniki.size(); i++)
+    for(unsigned int i=0; i<wspolczynniki.size(); i++)
     {
         wynik *= x;
         wynik += wspolczynniki[i];

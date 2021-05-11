@@ -37,7 +37,7 @@ double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Newton(std::vector<Punkt
 {
     double wynik = 0;
 
-    for(int k=0; k<wezly.size(); k++)
+    for(unsigned int k=0; k<wezly.size(); k++)
     {
         wynik += liczAn(wezly, k) * liczQn(wezly, x, k);
     }
@@ -63,10 +63,10 @@ std::vector<Punkt<double>> Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPr
 double Interpolacja::obliczWartoscFunkcjiInterpolowanej_Lagrange(std::vector<Punkt<double>> wezly, double x)
 {
     double wynik = 0, tmp;
-    for(int i=0; i<wezly.size(); i++)
+    for(unsigned int i=0; i<wezly.size(); i++)
     {
         tmp = wezly[i].y;
-        for(int j=0; j<wezly.size(); j++)
+        for(unsigned int j=0; j<wezly.size(); j++)
         {
             if(i != j)
             {

@@ -1,7 +1,7 @@
 #include "Hermit.h"
 
 double Hermit::kwadratura[4][5][2];
-int Hermit::ilosc_iteracji=0;
+int Hermit::ilosc_iteracji = 0;
 
 double Hermit::ObliczINF(funkcja f, int ilosc_wezlow)
 {
@@ -16,7 +16,7 @@ double Hermit::ObliczINF(funkcja f, int ilosc_wezlow)
         if(kwadratura[ilosc_wezlow][i][waga] != 0)
         {
             suma += kwadratura[ilosc_wezlow][i][waga] * f(kwadratura[ilosc_wezlow][i][wezel]);
-            punkty.push_back(Punkt<double>(kwadratura[ilosc_wezlow][i][wezel], f(kwadratura[ilosc_wezlow][i][wezel])));
+            punkty.push_back(Punkt<double>(kwadratura[ilosc_wezlow][i][wezel], f_w(kwadratura[ilosc_wezlow][i][wezel])*f(kwadratura[ilosc_wezlow][i][wezel])));
         }
     }
 

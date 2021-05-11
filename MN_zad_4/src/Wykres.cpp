@@ -56,7 +56,7 @@ void Wykres::Rysuj_Simsona(std::vector<Punkt<double>> punkty)
 {
     std::vector<Punkt<double>> punkty_funkcji_interpolowanej;
 
-    for(int i=0; i<punkty.size()-1; i++)
+    for(unsigned int i=0; i<punkty.size()-1; i++)
     {
         std::vector<Punkt<double>> wezly;
         for(int x=0; x<3; x++)
@@ -66,7 +66,7 @@ void Wykres::Rysuj_Simsona(std::vector<Punkt<double>> punkty)
 
         std::vector<Punkt<double>> tmp;
         tmp = Interpolacja::obliczWartosciFunkcjiInterpolowanejNaPrzedziale_Lagrange(Punkt<double>(wezly[0].x,wezly[2].x), wezly, 0.01);
-        for(int z=0; z<tmp.size(); z++)
+        for(unsigned int z=0; z<tmp.size(); z++)
         {
             punkty_funkcji_interpolowanej.push_back(tmp[z]);
         }

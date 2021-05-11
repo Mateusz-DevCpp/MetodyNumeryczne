@@ -12,7 +12,7 @@ double Newton_Cotes::Oblicz(funkcja f, double pp, double kp, double dokladnosc, 
 	double tmp_wynik1, tmp_wynik2;
 	double h, a, b;
 
-	double krok = (kp-pp)/ilosc_przedzialow;
+	//double krok = (kp-pp)/ilosc_przedzialow;
 
 	do
 	{
